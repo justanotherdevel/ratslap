@@ -550,8 +550,8 @@ static libusb_context *usb_init(void) {
         return NULL;
     }
 
-    // FIXME: Set debug?
-    libusb_set_debug(usb_ctx, 3);
+    // FIXME: Set debug?: Updated as libusb_set_debug is now deprecated
+    libusb_set_option(usb_ctx, LIBUSB_OPTION_LOG_LEVEL, 3);
 
     return usb_ctx;
 }
